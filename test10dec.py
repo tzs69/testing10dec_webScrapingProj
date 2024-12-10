@@ -3,7 +3,7 @@ from pip._vendor import requests
 from bs4 import BeautifulSoup
 import re
 
-url = "https://www.tapology.com/rankings/current-top-ten-heavyweight-mma-fighters-265-pounds"
+url = "xxx" #enter tapology top 50 fighters globally (specific weight class) link here
 page = requests.get(url)
 
 soup = BeautifulSoup(page.text, "html.parser")
