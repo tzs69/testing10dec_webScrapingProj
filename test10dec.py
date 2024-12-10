@@ -13,7 +13,11 @@ body_tag = soup.find('body', {'data-controller': "sidebar responsive grow-textar
 general = body_tag.find('div', class_ = "contentWrap clearfix")
 content = general.find('div', id = "content")
 
-weightClass = content.find('div', class_ = "pageHeading withSharing").find('h1').text.split(" ")[4]
+weightClassList = content.find('div', class_ = "pageHeading withSharing").find('h1').text.split(" ")
+if len(weightClassList) == 9: 
+    weightClass = weightClassList[4] + " " + weightClassList[5]
+else: 
+    weightClass = weightClassList[4]
 
 top50global_list = content.find('ul', class_ = "rankingItemsList")
 top50global = top50global_list.find_all('li', class_ = "rankingItemsItem")
